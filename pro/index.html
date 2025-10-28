@@ -1,438 +1,511 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
 
     <link rel="stylesheet" href="./styles.css" />
-</head>
+  </head>
 
-<body>
-
-
+  <body>
     <div class="container-fluid m-0 header_nav_bg">
-        <div class="container navbar">
-            <div id="navbarSupportedContent">
-                <ul>
-                    <li>
-                        <img src="./img/logo.png" width="35px" alt="logo">
-                    </li>
-                    <li>
-                        <a href="#home">Home</a>
-                    </li>
-                    <li>
-                        <a href="#blogs">Blogs</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="signin_model_btn">
-
-
-
-
-                <!-- Modal -->
-                <div class="modal fade logout_pop" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-
-                            <div class="modal-body logout_modal">
-                                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-sm confirmLogout" id="confirmLogout">Confirm Logout</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="nav_log">
-                    <div id="nav_currentUser" class="active_ele nav_current_wrapper" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
-                        <p class="login_user m-0"></p>
-                        <img src="" alt="profile" width="30px" class="login_user_img">
-                    </div>
-
-                    <button type="button" class="btn btn-primary launch_btn " data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop">
-                        SignIn
-                    </button>
-                </div>
-
-
-
-
-                <div data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                    aria-labelledby="staticBackdropLabel" aria-hidden="true" id="staticBackdrop" class="modal fade">
-                    <div class="modal-dialog overAllModel" id="model_main">
-                        <div class="modal-content">
-
-                            <div class="modal-body form_sign">
-                                <div class="form">
-                                    <div class="form_header">
-                                        <h3>Welcome!</h3>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close">
-                                        </button>
-                                    </div>
-                                    <p>Welcome to our blog site, Keep <br>
-                                        write something.
-                                    </p>
-                                    <div class="form_auth">
-                                        <form class="" id="signInForm">
-
-                                            <div class="input_wrapper">
-                                                <label for="email">EMAIL</label>
-                                                <input type="email" placeholder="Email" id="signIn_email">
-                                            </div>
-                                            <div class="input_wrapper">
-                                                <label for="password">PASSWORD</label>
-                                                <input type="password" placeholder="Password" id="signIn_password">
-                                            </div>
-                                            <p id="signin_full_form_error">
-
-                                            </p>
-                                            <button id="signin_btn">Login</button>
-
-                                            <p id="signUpNow">
-                                                i Don't have an account <span>SignUp Now</span>
-                                            </p>
-
-                                        </form>
-                                        <form class="active_ele" id="signUpForm">
-                                            <div class="input_wrapper input_profile">
-
-                                                <label for="profileInp">
-                                                    <img src="./img/user.png" width="90px" alt="profile"
-                                                        id="profileImg">
-                                                    <p class="profile_para">
-                                                        UPLOAD PROFILE PIC
-                                                    </p>
-                                                </label>
-
-                                                <input type="file" accept="images/*" placeholder="Email" hidden
-                                                    id="profileInp">
-                                            </div>
-                                            <div class="input_wrapper">
-                                                <label for="name">NAME</label>
-                                                <input type="text" id="userName" placeholder="name">
-                                            </div>
-                                            <div class="input_wrapper">
-                                                <label for="email">EMAIL</label>
-                                                <input type="email" id="email" placeholder="Email">
-                                            </div>
-                                            <div class="input_wrapper">
-                                                <label for="password">PASSWORD</label>
-                                                <input type="password" id="password" placeholder="password">
-                                            </div>
-                                            <div class="input_wrapper">
-
-                                                <label for="Confirm password">
-                                                    CONFIRM PASSWORD
-                                                </label>
-                                                <input type="password" id="confirmPassword"
-                                                    placeholder="Confirm Password">
-                                            </div>
-                                            <div class="input_wrapper">
-                                                <label for="dateOfBirth">DOB</label>
-                                                <input type="date" id="dateOfBirth" placeholder="Date Of Birth">
-                                            </div>
-                                            <div class="input_wrapper">
-                                                <div class="gender_select">
-                                                    <label for="gender_male">Male</label>
-                                                    <input type="radio" name="gender" id="male" value="Male">
-                                                </div>
-                                                <div class="gender_select">
-                                                    <label for="gender_female">Feale</label>
-                                                    <input type="radio" name="gender" id="female" value="Female">
-                                                </div>
-
-                                            </div>
-                                            <div class="tAC" id="tAC_wrapper">
-                                                <input type="checkbox" id="termsConditions">
-                                                <label for="termsAndConditions">Terms and Conditions</label>
-
-                                            </div>
-                                            <p id="formError" class="full_form_error"></p>
-                                            <button id="signup_btn">Sign Up</button>
-                                            <p class="signup_form" id="signInNow">
-                                                I already have an account? <span>Sign In now</span>
-
-                                            </p>
-                                        </form>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+      <div class="container navbar">
+        <div id="navbarSupportedContent">
+          <ul>
+            <li>
+              <img src="./img/logo.png" width="35px" alt="logo" />
+            </li>
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#blogs">Blogs</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
 
+        <div class="signin_model_btn">
+          <!-- Modal -->
+          <div
+            class="modal fade logout_pop"
+            id="exampleModalLogout"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="logout_design">
+                    <img src="./img/exit.png" width="100px" alt="logout" />
+                    <p>Are you sure, you really want to exit?</p>
+                  </div>
+                  <div class="logout_modal">
+                    <button
+                      type="button"
+                      class="btn btn-secondary btn-sm"
+                      data-bs-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm confirmLogout"
+                      id="confirmLogout"
+                    >
+                      Confirm Logout
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <div class="nav_log">
+            <div
+              id="nav_currentUser"
+              class="active_ele nav_current_wrapper"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalLogout"
+            >
+              <p class="login_user m-0"></p>
+              <img src="" alt="profile" width="30px" class="login_user_img" />
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-primary launch_btn"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              SignIn
+            </button>
+          </div>
+
+          <div
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+            id="staticBackdrop"
+            class="modal fade"
+          >
+            <div class="modal-dialog overAllModel" id="model_main">
+              <div class="modal-content">
+                <div class="modal-body form_sign">
+                  <div class="form">
+                    <div class="form_header">
+                      <h3>Welcome!</h3>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <p>
+                      Welcome to our blog site, Keep <br />
+                      write something.
+                    </p>
+                    <div class="form_auth">
+                      <form class="" id="signInForm">
+                        <div class="input_wrapper">
+                          <label for="email">EMAIL</label>
+                          <input
+                            type="email"
+                            placeholder="Email"
+                            id="signIn_email"
+                          />
+                        </div>
+                        <div class="input_wrapper">
+                          <label for="password">PASSWORD</label>
+                          <input
+                            type="password"
+                            placeholder="Password"
+                            id="signIn_password"
+                          />
+                        </div>
+                        <p id="signin_full_form_error"></p>
+                        <button id="signin_btn">Login</button>
+
+                        <p id="signUpNow">
+                          i Don't have an account <span>SignUp Now</span>
+                        </p>
+                      </form>
+                      <form class="active_ele" id="signUpForm">
+                        <div class="input_wrapper input_profile">
+                          <label for="profileInp">
+                            <img
+                              src="./img/user.png"
+                              width="90px"
+                              alt="profile"
+                              id="profileImg"
+                            />
+                            <p class="profile_para">UPLOAD PROFILE PIC</p>
+                          </label>
+
+                          <input
+                            type="file"
+                            accept="images/*"
+                            placeholder="Email"
+                            hidden
+                            id="profileInp"
+                          />
+                        </div>
+                        <div class="input_wrapper">
+                          <label for="name">NAME</label>
+                          <input type="text" id="userName" placeholder="name" />
+                        </div>
+                        <div class="input_wrapper">
+                          <label for="email">EMAIL</label>
+                          <input type="email" id="email" placeholder="Email" />
+                        </div>
+                        <div class="input_wrapper">
+                          <label for="password">PASSWORD</label>
+                          <input
+                            type="password"
+                            id="password"
+                            placeholder="password"
+                          />
+                        </div>
+                        <div class="input_wrapper">
+                          <label for="Confirm password">
+                            CONFIRM PASSWORD
+                          </label>
+                          <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm Password"
+                          />
+                        </div>
+                        <div class="input_wrapper">
+                          <label for="dateOfBirth">DOB</label>
+                          <input
+                            type="date"
+                            id="dateOfBirth"
+                            placeholder="Date Of Birth"
+                          />
+                        </div>
+                        <div class="input_wrapper">
+                          <div class="gender_select">
+                            <label for="gender_male">Male</label>
+                            <input
+                              type="radio"
+                              name="gender"
+                              id="male"
+                              value="Male"
+                            />
+                          </div>
+                          <div class="gender_select">
+                            <label for="gender_female">Feale</label>
+                            <input
+                              type="radio"
+                              name="gender"
+                              id="female"
+                              value="Female"
+                            />
+                          </div>
+                        </div>
+                        <div class="tAC" id="tAC_wrapper">
+                          <input type="checkbox" id="termsConditions" />
+                          <label for="termsAndConditions"
+                            >Terms and Conditions</label
+                          >
+                        </div>
+                        <p id="formError" class="full_form_error"></p>
+                        <button id="signup_btn">Sign Up</button>
+                        <p class="signup_form" id="signInNow">
+                          I already have an account? <span>Sign In now</span>
+                        </p>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-
     <div class="container-fluid blog_header p-0" id="home">
-        <div class="container">
-            <h1 class="blog_text m-0 fw-bold">
-                This is Blog Site. <br />
-                Write your memories.
-            </h1>
-        </div>
+      <div class="container">
+        <h1 class="blog_text m-0 fw-bold">
+          This is Blog Site. <br />
+          Write your memories.
+        </h1>
+      </div>
     </div>
 
     <div class="container-fluid auto_carousel">
-        <div class="container">
-            <div class="carousel_text">
-                <div class="carousel_container">
-                    <ul>
-                        <li>
-                            <img src="./img/pen.png" width="100px" alt="tablet" />
-                        </li>
-                        <li>
-                            <img src="./img/smartphone.png" width="100px" alt="phone" />
-                        </li>
-                        <li>
-                            <img src="./img/laptop.png" width="100px" alt="laptop" />
-                        </li>
-                        <li>
-                            <img src="./img/pen.png" width="100px" alt="tablet" />
-                        </li>
-                        <li>
-                            <img src="./img/smartphone.png" width="100px" alt="phone" />
-                        </li>
-                        <li>
-                            <img src="./img/laptop.png" width="100px" alt="laptop" />
-                        </li>
-                    </ul>
-                    <ul aria-hidden="true">
-                        <li>
-                            <img src="./img/pen.png" width="100px" alt="tablet" />
-                        </li>
-                        <li>
-                            <img src="./img/smartphone.png" width="100px" alt="phone" />
-                        </li>
-                        <li>
-                            <img src="./img/laptop.png" width="100px" alt="laptop" />
-                        </li>
-                        <li>
-                            <img src="./img/pen.png" width="100px" alt="tablet" />
-                        </li>
-                        <li>
-                            <img src="./img/smartphone.png" width="100px" alt="phone" />
-                        </li>
-                        <li>
-                            <img src="./img/laptop.png" width="100px" alt="laptop" />
-                        </li>
-                    </ul>
-                </div>
-                <div class="carousel_container_text">
-                    <p>
-                        Writing compelling text for a blog site involves understanding your
-                        audience, crafting an engaging narrative, and structuring the content
-                        for readability . Below are blog post examples for a few popular
-                        niches, including templates and writing advice to help you create your
-                        own content.
-                    </p>
-                    <br>
-                    <p>
-                        Writing compelling text for a blog site involves understanding your
-                        audience, crafting an engaging narrative, and structuring the content
-                        for readability . Below are blog post examples for a few popular
-                        niches, including templates and writing advice to help you create your
-                        own content.
-                    </p>
-                    <p>
-                        Writing compelling text for a blog site involves understanding your
-                        audience, crafting an engaging narrative, and structuring the content
-                        for readability . Below are blog post examples for a few popular
-                        niches, including templates and writing advice to help you create your
-                        own content.
-                    </p>
-                    <br>
-                    <p>
-                        Writing compelling text for a blog site involves understanding your
-                        audience, crafting an engaging narrative, and structuring the content
-                        for readability . Below are blog post examples for a few popular
-                        niches, including templates and writing advice to help you create your
-                        own content.
-                    </p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="carousel_text">
+          <div class="carousel_container">
+            <ul>
+              <li>
+                <img src="./img/pen.png" width="100px" alt="tablet" />
+              </li>
+              <li>
+                <img src="./img/smartphone.png" width="100px" alt="phone" />
+              </li>
+              <li>
+                <img src="./img/laptop.png" width="100px" alt="laptop" />
+              </li>
+              <li>
+                <img src="./img/pen.png" width="100px" alt="tablet" />
+              </li>
+              <li>
+                <img src="./img/smartphone.png" width="100px" alt="phone" />
+              </li>
+              <li>
+                <img src="./img/laptop.png" width="100px" alt="laptop" />
+              </li>
+            </ul>
+            <ul aria-hidden="true">
+              <li>
+                <img src="./img/pen.png" width="100px" alt="tablet" />
+              </li>
+              <li>
+                <img src="./img/smartphone.png" width="100px" alt="phone" />
+              </li>
+              <li>
+                <img src="./img/laptop.png" width="100px" alt="laptop" />
+              </li>
+              <li>
+                <img src="./img/pen.png" width="100px" alt="tablet" />
+              </li>
+              <li>
+                <img src="./img/smartphone.png" width="100px" alt="phone" />
+              </li>
+              <li>
+                <img src="./img/laptop.png" width="100px" alt="laptop" />
+              </li>
+            </ul>
+          </div>
+          <div class="carousel_container_text">
+            <p>
+              Writing compelling text for a blog site involves understanding
+              your audience, crafting an engaging narrative, and structuring the
+              content for readability . Below are blog post examples for a few
+              popular niches, including templates and writing advice to help you
+              create your own content.
+            </p>
+            <br />
+            <p>
+              Writing compelling text for a blog site involves understanding
+              your audience, crafting an engaging narrative, and structuring the
+              content for readability . Below are blog post examples for a few
+              popular niches, including templates and writing advice to help you
+              create your own content.
+            </p>
+            <p>
+              Writing compelling text for a blog site involves understanding
+              your audience, crafting an engaging narrative, and structuring the
+              content for readability . Below are blog post examples for a few
+              popular niches, including templates and writing advice to help you
+              create your own content.
+            </p>
+            <br />
+            <p>
+              Writing compelling text for a blog site involves understanding
+              your audience, crafting an engaging narrative, and structuring the
+              content for readability . Below are blog post examples for a few
+              popular niches, including templates and writing advice to help you
+              create your own content.
+            </p>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="container_fluid blogs_bg">
-        <div class="blog container p-0" id="blogs">
+      <div class="blog container p-0" id="blogs">
+        <div id="blog_container" class="blog_container active_ele">
+          <div class="withOut_scroll">
+            <div id="prevent_scroll" class="prevent_scroll"></div>
+          </div>
 
-            <div id="blog_container" class="blog_container active_ele">
-                <div class="withOut_scroll">
-                    <div id="prevent_scroll" class="prevent_scroll"></div>
-                </div>
+          <button
+            type="button"
+            id="blog_model_btn"
+            class="btn active_ele btn_addBlog"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo"
+          >
+            Add Blog +
+          </button>
+        </div>
+        <div class="blog_container_scroll">
+          <div class="auto_scroll">
+            <div class="allBlogs" id="allBlogs"></div>
+            <div class="allBlogs" id="allBlogs2" aria-hidden="true"></div>
+          </div>
+        </div>
 
-                <button type="button" id="blog_model_btn" class="btn btn-primary active_ele btn_addBlog"
-                    data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-                    Add Blog +
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Blog</h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form id="blog_form">
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label"
+                      >files:</label
+                    >
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="blog_img"
+                      accept="image/*"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label"
+                      >Heading:</label
+                    >
+                    <input type="text" class="form-control" id="blog_heading" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="message-text" class="col-form-label"
+                      >Blog:</label
+                    >
+                    <textarea class="form-control" id="blog_text"></textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
                 </button>
+                <button type="button" class="btn btn-primary" id="addBlog">
+                  Add Blog
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary active_ele"
+                  id="editBlog"
+                >
+                  Update Blog
+                </button>
+              </div>
             </div>
-            <div class="blog_container_scroll">
-                <div class="auto_scroll">
-                    <div class="allBlogs" id="allBlogs"></div>
-                    <div class="allBlogs" id="allBlogs2" aria-hidden="true"></div>
-                </div>
-            </div>
-
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Blog</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form id="blog_form">
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">files:</label>
-                                    <input type="file" class="form-control" id="blog_img" accept="image/*" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">Heading:</label>
-                                    <input type="text" class="form-control" id="blog_heading" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message-text" class="col-form-label">Blog:</label>
-                                    <textarea class="form-control" id="blog_text"></textarea>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                Close
-                            </button>
-                            <button type="button" class="btn btn-primary" id="addBlog">
-                                Add Blog
-                            </button>
-                            <button type="button" class="btn btn-primary active_ele" id="editBlog">
-                                Update Blog
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
+    
     <div class="blogSite_footer container-fluid p-0" id="contact">
-        <div class="container footer_content">
-            <div class="footer_1 footer_section">
-                <h3>WHO WE ARE</h3>
-                <h1>BLOG APPLICATION</h1>
-                <P class="m-0">
-                    Lorem ipsum dolor
-                    sit amet consectetur,
-                    adipisicing elit. Sit
-                    tenetur.
-                </P>
-                <p>
-                    Lorem ipsum dolor sit amet.
-                </p>
-
-            </div>
-            <div class="footer_2 footer_section">
-                <h3>WE ARE SOCIAL</h3>
-                <P class="m-0">
-                    Lorem, ipsum dolor
-                    sit amet consectetur
-                    adipisicing elit. Explicabo.
-                </P>
-                <p>
-                    Lorem, ipsum dolor.
-                </p>
-                <div class="footer_social_img">
-                    <img src="./img/facebook.png" alt="fb" width="15px">
-                    <img src="./img/instagram.png" alt="insta" width="15px">
-                    <img src="./img/twitter.png" alt="x" width="15px">
-                </div>
-            </div>
-            <div class="footer_3 footer_section">
-                <h3>SITE MAP</h3>
-                <div>
-                    <ul>
-                        <div>
-                            <li>Company </li>
-                            <li>Service</li>
-                            <li>Portfolio</li>
-                            <li>Contact Us</li>
-                        </div>
-
-                        <div>
-                            <li>Company </li>
-                            <li>Service</li>
-                            <li>Carrers</li>
-                            <li>Contact Us</li>
-
-                        </div>
-                    </ul>
-
-
-
-                </div>
-            </div>
+      <div class="container footer_content">
+        <div class="footer_1 footer_section">
+          <h3>WHO WE ARE</h3>
+          <h1>BLOG APPLICATION</h1>
+          <p class="m-0">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
+            tenetur.
+          </p>
+          <p>Lorem ipsum dolor sit amet.</p>
         </div>
-        <div class="container-fluid blogSite_footer_bottom">
-            <div class="container blog_footer_content">
-                <div>
-                    <h3 class="footer_copyRight">
-                        Copyright © 2008-2025 of Rifluxyss Softwares LLC.
-                    </h3>
-                    <div>
-                        <small>
-                            BlogApp is a registered trademark of BlogApp.
-                            Softwares LLC. This website, it's contents,
-                            layouts etc are copyright protected.
-
-                        </small>
-                    </div>
-                    <div>
-                        <small>
-                            This site content doesn't in any way represent
-                            the political interests of any of the personnel
-                            involved with the company.
-                        </small>
-                    </div>
-
-                </div>
-                <p class="footer_contact">
-                    (972) 6520-0785
-                </p>
-            </div>
+        <div class="footer_2 footer_section">
+          <h3>WE ARE SOCIAL</h3>
+          <p class="m-0">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo.
+          </p>
+          <p>Lorem, ipsum dolor.</p>
+          <div class="footer_social_img">
+            <img src="./img/facebook.png" alt="fb" width="15px" />
+            <img src="./img/instagram.png" alt="insta" width="15px" />
+            <img src="./img/twitter.png" alt="x" width="15px" />
+          </div>
         </div>
+        <div class="footer_3 footer_section">
+          <h3>SITE MAP</h3>
+          <div>
+            <ul>
+              <div>
+                <li>Company</li>
+                <li>Service</li>
+                <li>Portfolio</li>
+                <li>Contact Us</li>
+              </div>
 
+              <div>
+                <li>Company</li>
+                <li>Service</li>
+                <li>Carrers</li>
+                <li>Contact Us</li>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid blogSite_footer_bottom">
+        <div class="container blog_footer_content">
+          <div>
+            <h3 class="footer_copyRight">
+              Copyright © 2008-2025 of Rifluxyss Softwares LLC.
+            </h3>
+            <div>
+              <small>
+                BlogApp is a registered trademark of BlogApp. Softwares LLC.
+                This website, it's contents, layouts etc are copyright
+                protected.
+              </small>
+            </div>
+            <div>
+              <small>
+                This site content doesn't in any way represent the political
+                interests of any of the personnel involved with the company.
+              </small>
+            </div>
+          </div>
+          <p class="footer_contact">(972) 6520-0785</p>
+        </div>
+      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="./script.js" defer></script>
-</body>
-
+  </body>
 </html>
